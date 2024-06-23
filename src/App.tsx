@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "./store/store";
 import { useEffect } from "react";
 import { users } from "./MockUserData/user";
+import './i18n'
 
 const { Header, Content } = Layout;
 function App() {
