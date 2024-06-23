@@ -71,6 +71,10 @@ button {
 button:hover {
   background: #40a9ff;
 }
+.ant-btn-default:disabled {
+  background: #969191;
+  cursor: not-allowed;
+}
 
 
 /* * #ffa200 

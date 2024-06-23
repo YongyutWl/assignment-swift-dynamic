@@ -80,17 +80,11 @@ const Assignment2 = () => {
 
   const rowSelection = {
     selectedRowKeys,
-    onChange: (selectedRowKeys: React.Key[], selectedRows: any) => {
+    onChange: (selectedRowKeys: React.Key[]) => {
       setSelectedRowKeys(selectedRowKeys);
-      console.log(
-        `selectedRowKeys: ${selectedRowKeys}`,
-        "selectedRows: ",
-        selectedRows
-      );
     },
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     getCheckboxProps: (record: any) => ({
-      disabled: record.name === "Disabled User", // Column configuration not to be checked
+      disabled: record.name === "Disabled User",
       name: record.name,
     }),
   };
@@ -99,6 +93,16 @@ const Assignment2 = () => {
     const newDataSource = dataSource.filter((item) => item.id !== id);
     setDataSource(newDataSource);
     localStorage.setItem("usersData", JSON.stringify(newDataSource));
+  };
+
+  const deleteRecordList = () => {
+    if (!selectedRowKeys.length) return;
+    const newDataSource = dataSource.filter(
+      (item) => !selectedRowKeys.includes(item?.id || "")
+    );
+    setDataSource(newDataSource);
+    localStorage.setItem("usersData", JSON.stringify(newDataSource));
+    setSelectedRowKeys([]);
   };
 
   const getUser = () => {
@@ -134,6 +138,20 @@ const Assignment2 = () => {
         className="layout-card-content"
       >
         <FormAndTable />
+
+        <Button
+          onClick={() => {
+            deleteRecordList();
+          }}
+          style={{
+            width: "20%",
+            alignSelf: "flex-start",
+            marginBottom: "20px",
+          }}
+          disabled={selectedRowKeys.length === 0}
+        >
+          Delete Selected
+        </Button>
 
         <Table
           dataSource={dataSource || []}

@@ -23,8 +23,6 @@ const FormAndTable = () => {
   const userData = useAppSelector((state) => state?.user);
 
   const onFinish = (values: any) => {
-    console.log("Form values:", values);
-
     const data = JSON.parse(localStorage.getItem("usersData") || "[]");
 
     let newData = [...data];
