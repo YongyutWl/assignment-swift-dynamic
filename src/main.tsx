@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import NotFound from "./NotFound.tsx";
 import Assignment1 from "./components/assignment1/index.tsx";
 import Assignment2 from "./components/assignment2/index.tsx";
+import { BrowserRouter } from "react-router-dom";
 
 const router = createBrowserRouter([
   {
@@ -29,8 +30,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <Provider store={store}>
-      <RouterProvider router={router} />
-    </Provider>
+    <BrowserRouter basename="/my-awesome-app">
+      <Provider store={store}>
+        <RouterProvider router={router} />
+      </Provider>
+    </BrowserRouter>
   </React.StrictMode>
 );
