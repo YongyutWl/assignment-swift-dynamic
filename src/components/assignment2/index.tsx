@@ -113,9 +113,10 @@ const Assignment2 = () => {
 
   const getUser = () => {
     const user = localStorage.getItem("usersData");
+    const usersJson = JSON.parse(user || "[]");
     console.log(user);
-    if (user && user.length) {
-      setDataSource(JSON.parse(user));
+    if (usersJson && usersJson.length) {
+      setDataSource(usersJson);
     }
   };
 
