@@ -71,7 +71,13 @@ const Assignment2 = () => {
             >
               Edit
             </Button>
-            <Button onClick={() => deleteRecord(record.id)}>Delete</Button>
+            <Button
+              onClick={() => {
+                deleteRecord(record.id);
+              }}
+            >
+              Delete
+            </Button>
           </Flex>
         );
       },
@@ -107,7 +113,8 @@ const Assignment2 = () => {
 
   const getUser = () => {
     const user = localStorage.getItem("usersData");
-    if (user) {
+    console.log(user);
+    if (user && user.length) {
       setDataSource(JSON.parse(user));
     }
   };

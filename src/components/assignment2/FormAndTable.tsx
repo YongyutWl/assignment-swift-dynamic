@@ -26,7 +26,6 @@ const FormAndTable = () => {
   const dispatch = useAppDispatch();
 
   const userData = useAppSelector((state) => state?.user);
-  console.log(userData);
 
   const onFinish = (values: any) => {
     const data = JSON.parse(localStorage.getItem("usersData") || "[]");
