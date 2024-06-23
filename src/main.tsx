@@ -30,7 +30,7 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <BrowserRouter basename="/my-awesome-app">
+    <BrowserRouter basename="/rococo-scone-581322">
       <Provider store={store}>
         <RouterProvider router={router} />
       </Provider>
