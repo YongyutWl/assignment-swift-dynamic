@@ -107,7 +107,16 @@ const Assignment1 = () => {
                 alignItems: "center",
               }}
             >
-              <ShapeCardCarousel key={index} shape={shape} onClick={() => {}} />
+              <ShapeCardCarousel
+                key={index}
+                shape={shape}
+                onClick={() => {
+                  const tmpShapes = [...shapeCarousel].sort(
+                    () => Math.random() - 0.5
+                  );
+                  setShapeCarousel(tmpShapes);
+                }}
+              />
             </Col>
           ))}
         </Row>
