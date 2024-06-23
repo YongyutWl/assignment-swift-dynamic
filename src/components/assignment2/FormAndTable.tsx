@@ -11,16 +11,22 @@ import {
   Col,
   InputNumber,
 } from "antd";
-import { useAppSelector } from "../../store/hooks";
+// import { useDispatch } from "react-redux";
+
+import { useAppSelector, useAppDispatch } from "../../store/hooks";
 import dayjs from "dayjs";
 import { v4 as uuidv4 } from "uuid";
+import { setUser } from "../../features/users/userSlice";
 
 const { Option } = Select;
 
 const FormAndTable = () => {
   const [form] = Form.useForm();
 
+  const dispatch = useAppDispatch();
+
   const userData = useAppSelector((state) => state?.user);
+  console.log(userData);
 
   const onFinish = (values: any) => {
     const data = JSON.parse(localStorage.getItem("usersData") || "[]");
@@ -36,6 +42,8 @@ const FormAndTable = () => {
     }
 
     form.resetFields();
+
+    dispatch(setUser(null));
 
     window.location.reload();
   };
@@ -197,7 +205,10 @@ const FormAndTable = () => {
             </Button>
             <Button
               style={{ marginLeft: "10px" }}
-              onClick={() => form.resetFields()}
+              onClick={() => {
+                form.resetFields();
+                dispatch(setUser(null));
+              }}
             >
               Reset
             </Button>
