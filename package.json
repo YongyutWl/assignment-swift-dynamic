@@ -35,6 +35,5 @@
     "eslint-plugin-react-refresh": "^0.4.6",
     "typescript": "^5.2.2",
     "vite": "^5.2.0"
-  },
-  "homepage": "https://rococo-scone-581322.netlify.app/"
+  }
 }
