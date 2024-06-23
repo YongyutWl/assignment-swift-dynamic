@@ -1,0 +1,78 @@
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+} */
+
+
+.ant-layout-header {
+  display: flex;
+  justify-content: flex-end;
+  /* background: #f0f2f5; */
+  background: linear-gradient(to right, #6eda78, #ffa200);
+  /* background: linear-gradient(90deg, rgba(109, 234, 120, 1) 0%, rgba(255, 162, 0, 1) 50%); */
+}
+
+.ant-layout-content {
+  background: linear-gradient(to right, #6eda78, #ffa200);
+  /* background: linear-gradient(90deg, rgba(109, 234, 120, 1) 0%, rgba(255, 162, 0, 1) 50%); */
+}
+.layout-content-white {
+  background: linear-gradient(90deg, white 0%, white 50%);
+}
+
+button {
+  margin: 0 10px;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  background: #1890ff;
+  color: white;
+  border-radius: 5px;
+}
+
+button:hover {
+  background: #40a9ff;
+}
+
+
+/* * #ffa200 
+
+* #6eda78  */
