@@ -131,9 +131,7 @@ const Assignment1 = () => {
                 }}
               />
               <Button
-                // onClick={onMove}
                 style={{
-                  // marginTop: 16,
                   backgroundColor: "#6eda78 ",
                   position: "relative",
                   borderRadius: "10px",
@@ -184,9 +182,7 @@ const Assignment1 = () => {
                 />
               </div>
               <Button
-                // onClick={onMove}
                 style={{
-                  // marginTop: 16,
                   backgroundColor: "#6eda78 ",
                   position: "relative",
                   borderRadius: "10px",
@@ -220,9 +216,7 @@ const Assignment1 = () => {
                 }}
               />
               <Button
-                // onClick={onMove}
                 style={{
-                  // marginTop: 16,
                   backgroundColor: "#6eda78 ",
                   position: "relative",
                   borderRadius: "10px",
