@@ -1,6 +1,7 @@
 // src/components/ShapeCard.tsx
 import React from "react";
 import { Card } from "antd";
+import "./index.css";
 
 export interface ShapeCardCarouselProps {
   shape: IShapeCarousel;
@@ -40,38 +41,44 @@ const ShapeCardCarousel: React.FC<ShapeCardCarouselProps> = ({
         return (
           <div
             style={{
-              width: 150,
-              height: 80,
+              width: 250,
+              height: 100,
               backgroundColor: "gray",
               borderRadius: "50%",
             }}
+            className="and-layout-card-content"
           />
         );
       case "trapezoid":
         return (
           <div
             style={{
-              width: 0,
-              height: 0,
-              borderBottom: "50px solid gray",
-              borderLeft: "25px solid transparent",
-              borderRight: "25px solid transparent",
-              borderTop: "50px solid transparent",
+              width: 250,
+              height: 100,
+              backgroundColor: "gray",
+              clipPath: "polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%)",
             }}
           />
         );
       case "rectangle":
         return (
-          <div style={{ width: 150, height: 100, backgroundColor: "gray" }} />
+          <div
+            style={{
+              width: 250,
+              height: 100,
+              backgroundColor: "gray",
+              clipPath: "polygon(0 0, 100% 0%, 100% 100%, 0% 100%)",
+            }}
+          />
         );
       case "parallelogram":
         return (
           <div
             style={{
-              width: 150,
+              width: 250,
               height: 100,
               backgroundColor: "gray",
-              transform: "skew(20deg)",
+              clipPath: "polygon(0 0, 75% 0, 100% 100%, 25% 100%)",
             }}
           />
         );
@@ -86,11 +93,13 @@ const ShapeCardCarousel: React.FC<ShapeCardCarouselProps> = ({
         display: "flex",
         alignItems: "center",
         alignContent: "center",
-        width: 240,
+        justifyContent: "center",
+        width: "100%",
         textAlign: "center",
         margin: "10px",
       }}
       onClick={onClick}
+      className="and-layout-card-content"
     >
       {renderShape()}
     </Card>

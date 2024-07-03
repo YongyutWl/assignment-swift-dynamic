@@ -5,6 +5,7 @@ import { Col, Row } from "antd";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import ShapeCardCarousel, { IShapeCarousel } from "./ShapeCardCarousel";
+import "./index.css";
 
 const { Header, Content } = Layout;
 
@@ -172,7 +173,7 @@ const Assignment1 = () => {
                   top: "40px",
                 }}
               >
-                Move shape
+                Move position
               </Button>
             </Card>
           </Col>
@@ -233,16 +234,26 @@ const Assignment1 = () => {
         </Row> */}
         <Divider />
 
-        <Row>
+        <Row
+          style={{
+            display: "flex",
+            justifyContent: "flex-end",
+            alignItems: "center",
+            width: "70%",
+          }}
+          gutter={8}
+          justify="end"
+        >
           {shapeCarousel.map((shape, index) => (
             <Col
-              span={8}
+              span={6}
+              offset={1}
               key={index}
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
+              // style={{
+              //   display: "flex",
+              //   justifyContent: "center",
+              //   alignItems: "center",
+              // }}
             >
               <ShapeCardCarousel
                 key={index}
@@ -258,14 +269,15 @@ const Assignment1 = () => {
           ))}
         </Row>
 
-        <Row
+        {/* <Row
           style={{
-            display: "flex",
-            justifyContent: "flex-end",
+            // display: "flex",
+            // justifyContent: "flex-end",
             alignItems: "center",
             width: "70%",
           }}
           gutter={8}
+          justify="end"
         >
           <Col span={6}>
             <Card
@@ -415,7 +427,7 @@ const Assignment1 = () => {
               />
             </Card>
           </Col>
-        </Row>
+        </Row> */}
       </Content>
     </Layout>
   );

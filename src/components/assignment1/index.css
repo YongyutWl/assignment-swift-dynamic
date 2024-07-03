@@ -2,6 +2,11 @@
     background: #ffa200 
 }
 
+.shape-card {
+    color: gray;
+    border-color: gray;
+}
 .shape-card:hover {
-    background: #ffffff
+    color: #ffffff;
+    border-color: #ffffff;
 }
