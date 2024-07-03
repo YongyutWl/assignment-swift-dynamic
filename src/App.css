@@ -46,12 +46,13 @@
   display: flex;
   justify-content: flex-end;
   /* background: #f0f2f5; */
-  background: linear-gradient(to right, #6eda78, #ffa200);
+  background: linear-gradient(45deg, #6eda78, #ffa200);
   /* background: linear-gradient(90deg, rgba(109, 234, 120, 1) 0%, rgba(255, 162, 0, 1) 50%); */
 }
 
+
 .ant-layout-content {
-  background: linear-gradient(to right, #6eda78, #ffa200);
+  background: linear-gradient(45deg, #6eda78, #ffa200);
   /* background: linear-gradient(90deg, rgba(109, 234, 120, 1) 0%, rgba(255, 162, 0, 1) 50%); */
 }
 .layout-content-white {
