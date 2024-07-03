@@ -4,6 +4,8 @@
     "description": "Description",
     "test": "Test",
     "Layout & Style": "Layout & Style",
-    "Form & Table": "Form & Table"
+    "Form & Table": "Form & Table",
+    "Move shape" : "Move shape",
+    "Move Position" : "Move position"
 }
 

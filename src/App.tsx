@@ -53,7 +53,7 @@ function App() {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          minHeight: "300vh",
+          minHeight: "100vh",
         }}
       >
         <Card

@@ -120,7 +120,7 @@ const Assignment1 = () => {
                   top: "40px",
                 }}
               >
-                Move shape
+                {t("Move shape")}
               </Button>
             </Card>
           </Col>
@@ -173,7 +173,7 @@ const Assignment1 = () => {
                   top: "40px",
                 }}
               >
-                Move position
+                {t("Move Position")}
               </Button>
             </Card>
           </Col>
@@ -209,7 +209,7 @@ const Assignment1 = () => {
                   top: "40px",
                 }}
               >
-                Move shape
+                {t("Move shape")}
               </Button>
             </Card>
           </Col>
@@ -241,19 +241,14 @@ const Assignment1 = () => {
             alignItems: "center",
             width: "70%",
           }}
-          gutter={8}
+          gutter={16}
           justify="end"
         >
           {shapeCarousel.map((shape, index) => (
             <Col
               span={6}
-              offset={1}
               key={index}
-              // style={{
-              //   display: "flex",
-              //   justifyContent: "center",
-              //   alignItems: "center",
-              // }}
+              offset={1}
             >
               <ShapeCardCarousel
                 key={index}

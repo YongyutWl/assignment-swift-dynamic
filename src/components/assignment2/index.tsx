@@ -140,7 +140,7 @@ const Assignment2 = () => {
         style={{
           display: "flex",
           flexDirection: "column",
-          minHeight: "300vh",
+          minHeight: "100vh",
         }}
         className="layout-card-content"
       >
