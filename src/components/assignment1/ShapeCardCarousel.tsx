@@ -45,7 +45,6 @@ const ShapeCardCarousel: React.FC<ShapeCardCarouselProps> = ({
             style={{
               width: 250,
               height: 100,
-
               borderRadius: "50%",
             }}
             className="shape-card"
@@ -69,7 +68,6 @@ const ShapeCardCarousel: React.FC<ShapeCardCarouselProps> = ({
             style={{
               width: 250,
               height: 100,
-
               clipPath: "polygon(0 0, 100% 0%, 100% 100%, 0% 100%)",
             }}
             className="shape-card"
@@ -81,7 +79,6 @@ const ShapeCardCarousel: React.FC<ShapeCardCarouselProps> = ({
             style={{
               width: 250,
               height: 100,
-
               clipPath: "polygon(0 0, 75% 0, 100% 100%, 25% 100%)",
             }}
             className="shape-card"
