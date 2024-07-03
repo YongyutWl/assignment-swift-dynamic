@@ -127,7 +127,6 @@ const Assignment2 = () => {
     <Layout>
       <Header
         style={{
-          backgroundColor: "#6eda78",
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",

@@ -1,12 +1,24 @@
-.and-layout-card-content:hover {
-    background: #ffa200 
+
+.and-layout-card-content:hover,
+.and-layout-card-content2:hover
+ {
+  background: #ffa200;
+}
+
+.and-layout-card-content2:active{
+  background: #6eda78;
 }
 
 .shape-card {
-    color: gray;
-    border-color: gray;
+  color: gray;
+  border-color: gray;
+  background: gray;
 }
-.shape-card:hover {
-    color: #ffffff;
-    border-color: #ffffff;
+
+.shape-card:hover,
+.shape-card:focus {
+  color: #fff;
+  border-color: #fff;
+  background: #fff;
 }
+

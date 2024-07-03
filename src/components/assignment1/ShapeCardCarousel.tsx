@@ -1,4 +1,3 @@
-// src/components/ShapeCard.tsx
 import React from "react";
 import { Card } from "antd";
 import "./index.css";
@@ -24,7 +23,10 @@ const ShapeCardCarousel: React.FC<ShapeCardCarouselProps> = ({
     switch (shape) {
       case "square":
         return (
-          <div style={{ width: 100, height: 100, backgroundColor: "gray" }} />
+          <div
+            style={{ width: 100, height: 100 }}
+            className="shape-card"
+          />
         );
       case "circle":
         return (
@@ -32,9 +34,9 @@ const ShapeCardCarousel: React.FC<ShapeCardCarouselProps> = ({
             style={{
               width: 100,
               height: 100,
-              backgroundColor: "gray",
               borderRadius: "50%",
             }}
+            className="shape-card"
           />
         );
       case "ellipse":
@@ -43,10 +45,10 @@ const ShapeCardCarousel: React.FC<ShapeCardCarouselProps> = ({
             style={{
               width: 250,
               height: 100,
-              backgroundColor: "gray",
+
               borderRadius: "50%",
             }}
-            className="and-layout-card-content"
+            className="shape-card"
           />
         );
       case "trapezoid":
@@ -55,9 +57,10 @@ const ShapeCardCarousel: React.FC<ShapeCardCarouselProps> = ({
             style={{
               width: 250,
               height: 100,
-              backgroundColor: "gray",
+
               clipPath: "polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%)",
             }}
+            className="shape-card"
           />
         );
       case "rectangle":
@@ -66,9 +69,10 @@ const ShapeCardCarousel: React.FC<ShapeCardCarouselProps> = ({
             style={{
               width: 250,
               height: 100,
-              backgroundColor: "gray",
+
               clipPath: "polygon(0 0, 100% 0%, 100% 100%, 0% 100%)",
             }}
+            className="shape-card"
           />
         );
       case "parallelogram":
@@ -77,9 +81,10 @@ const ShapeCardCarousel: React.FC<ShapeCardCarouselProps> = ({
             style={{
               width: 250,
               height: 100,
-              backgroundColor: "gray",
+
               clipPath: "polygon(0 0, 75% 0, 100% 100%, 25% 100%)",
             }}
+            className="shape-card"
           />
         );
       default:
@@ -99,7 +104,7 @@ const ShapeCardCarousel: React.FC<ShapeCardCarouselProps> = ({
         margin: "10px",
       }}
       onClick={onClick}
-      className="and-layout-card-content"
+      className="and-layout-card-content2"
     >
       {renderShape()}
     </Card>

@@ -1,5 +1,5 @@
 import {
-/* Card, */ Button,
+  /* Card, */ Button,
   Card,
   Divider,
   Layout,
@@ -23,8 +23,7 @@ const Assignment1 = () => {
   const handleChangeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
   };
-
-  // const shapes = ["left", "up", "down", "right"] as IShape[];
+  
   const [shapeCarousel, setShapeCarousel] = useState<IShapeCarousel[]>([
     "square",
     "circle",
@@ -68,6 +67,7 @@ const Assignment1 = () => {
     // setShapeCarousel(newShapes);
   };
   return (
+    <div style={{ background: `linear-gradient(45deg, #6eda78, #ffa200)` }}>
     <Layout style={{ background: `linear-gradient(45deg, #6eda78, #ffa200)` }}>
       <Header
         style={{
@@ -75,7 +75,6 @@ const Assignment1 = () => {
           justifyContent: "space-between",
           alignItems: "center",
         }}
-        className="allBackground"
       >
         <Typography.Title level={3}>{`${t(
           "Layout & Style"
@@ -280,6 +279,7 @@ const Assignment1 = () => {
         </Row>
       </Content>
     </Layout>
+    </div>
   );
 };
 

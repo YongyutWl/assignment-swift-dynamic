@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "./store/store";
 import { useEffect } from "react";
 import { users } from "./MockUserData/user";
-import './i18n'
+import "./i18n";
 
 const { Header, Content } = Layout;
 function App() {
@@ -32,7 +32,6 @@ function App() {
     <Layout>
       <Header
         style={{
-          backgroundColor: "#6eda78",
           display: "flex",
           justifyContent: "flex-end",
           alignItems: "center",
