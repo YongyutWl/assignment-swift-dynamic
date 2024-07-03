@@ -20,73 +20,28 @@ const ShapeCardCarousel: React.FC<ShapeCardCarouselProps> = ({
   onClick,
 }) => {
   const renderShape = () => {
-    switch (shape) {
-      case "square":
-        return (
-          <div
-            style={{ width: 100, height: 100 }}
-            className="shape-card"
-          />
-        );
-      case "circle":
-        return (
-          <div
-            style={{
-              width: 100,
-              height: 100,
-              borderRadius: "50%",
-            }}
-            className="shape-card"
-          />
-        );
-      case "ellipse":
-        return (
-          <div
-            style={{
-              width: 250,
-              height: 100,
-              borderRadius: "50%",
-            }}
-            className="shape-card"
-          />
-        );
-      case "trapezoid":
-        return (
-          <div
-            style={{
-              width: 250,
-              height: 100,
+    const shapes = {
+      square: { width: 100, height: 100 },
+      circle: { width: 100, height: 100, borderRadius: "50%" },
+      ellipse: { width: 250, height: 100, borderRadius: "50%" },
+      trapezoid: {
+        width: 250,
+        height: 100,
+        clipPath: "polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%)",
+      },
+      rectangle: {
+        width: 250,
+        height: 100,
+        clipPath: "polygon(0 0, 100% 0%, 100% 100%, 0% 100%)",
+      },
+      parallelogram: {
+        width: 250,
+        height: 100,
+        clipPath: "polygon(0 0, 75% 0, 100% 100%, 25% 100%)",
+      },
+    };
 
-              clipPath: "polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%)",
-            }}
-            className="shape-card"
-          />
-        );
-      case "rectangle":
-        return (
-          <div
-            style={{
-              width: 250,
-              height: 100,
-              clipPath: "polygon(0 0, 100% 0%, 100% 100%, 0% 100%)",
-            }}
-            className="shape-card"
-          />
-        );
-      case "parallelogram":
-        return (
-          <div
-            style={{
-              width: 250,
-              height: 100,
-              clipPath: "polygon(0 0, 75% 0, 100% 100%, 25% 100%)",
-            }}
-            className="shape-card"
-          />
-        );
-      default:
-        return null;
-    }
+    return <div style={shapes[shape]} className="shape-card" />;
   };
 
   return (
@@ -109,3 +64,4 @@ const ShapeCardCarousel: React.FC<ShapeCardCarouselProps> = ({
 };
 
 export default ShapeCardCarousel;
+
