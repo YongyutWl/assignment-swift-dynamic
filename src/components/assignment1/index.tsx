@@ -1,4 +1,11 @@
-import { /* Card, */ Button, Card, Divider, Layout, Typography } from "antd";
+import {
+  /* Card, */ Button,
+  Card,
+  Divider,
+  Layout,
+  Select,
+  Typography,
+} from "antd";
 import { useState } from "react";
 // import ShapeCard, { IShape } from "./ShapeCard";
 import { Col, Row } from "antd";
@@ -11,7 +18,11 @@ const { Header, Content } = Layout;
 
 const Assignment1 = () => {
   const navigate = useNavigate();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+  const handleChangeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+  };
 
   // const shapes = ["left", "up", "down", "right"] as IShape[];
   const [shapeCarousel, setShapeCarousel] = useState<IShapeCarousel[]>([
@@ -67,7 +78,18 @@ const Assignment1 = () => {
         <Typography.Title level={3}>{`${t(
           "Layout & Style"
         )}`}</Typography.Title>
-        <Button onClick={() => navigate("/")}>Home</Button>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <Select
+            defaultValue={i18n.language}
+            style={{ width: 120 }}
+            onChange={handleChangeLanguage}
+            options={[
+              { value: "en", label: "English" },
+              { value: "th", label: "Thai" },
+            ]}
+          />
+          <Button onClick={() => navigate("/")}>Home</Button>
+        </div>
       </Header>
       <Content
         style={{
@@ -245,11 +267,7 @@ const Assignment1 = () => {
           justify="end"
         >
           {shapeCarousel.map((shape, index) => (
-            <Col
-              span={6}
-              key={index}
-              offset={1}
-            >
+            <Col span={6} key={index} offset={1}>
               <ShapeCardCarousel
                 key={index}
                 shape={shape}
