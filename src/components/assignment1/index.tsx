@@ -1,5 +1,5 @@
 import {
-  /* Card, */ Button,
+/* Card, */ Button,
   Card,
   Divider,
   Layout,
@@ -34,10 +34,15 @@ const Assignment1 = () => {
     "parallelogram",
   ]);
 
+  const [centerPosition, setCenterPosition] = useState<boolean>(false);
+
+  const [firstHalf, secondHalf] = [
+    shapeCarousel.slice(0, Math.ceil(shapeCarousel.length / 2)),
+    shapeCarousel.slice(Math.ceil(shapeCarousel.length / 2)),
+  ];
+
   const moveShape = (bySide: string) => {
     let newShapes: IShapeCarousel[] = [];
-
-    // const check = shapes[index];
 
     const tmpShapes = [...shapeCarousel];
 
@@ -54,25 +59,23 @@ const Assignment1 = () => {
   };
 
   const movePosition = () => {
-    let newShapes: IShapeCarousel[] = [];
-
-    const tmpShapes = [...shapeCarousel];
-
-    const firstHaftElement = [...tmpShapes.slice(0, tmpShapes.length / 2)];
-    const lastHaftElement = [...tmpShapes.slice(tmpShapes.length / 2)];
-
-    newShapes = [...lastHaftElement, ...firstHaftElement];
-
-    setShapeCarousel(newShapes);
+    setCenterPosition(!centerPosition);
+    // let newShapes: IShapeCarousel[] = [];
+    // const tmpShapes = [...shapeCarousel];
+    // const firstHaftElement = [...tmpShapes.slice(0, tmpShapes.length / 2)];
+    // const lastHaftElement = [...tmpShapes.slice(tmpShapes.length / 2)];
+    // newShapes = [...lastHaftElement, ...firstHaftElement];
+    // setShapeCarousel(newShapes);
   };
   return (
-    <Layout>
+    <Layout style={{ background: `linear-gradient(45deg, #6eda78, #ffa200)` }}>
       <Header
         style={{
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
         }}
+        className="allBackground"
       >
         <Typography.Title level={3}>{`${t(
           "Layout & Style"
@@ -87,7 +90,7 @@ const Assignment1 = () => {
               { value: "th", label: "Thai" },
             ]}
           />
-          <Button onClick={() => navigate("/")}>Home</Button>
+          <Button onClick={() => navigate("/")}>{t("Home")}</Button>
         </div>
       </Header>
       <Content
@@ -228,36 +231,40 @@ const Assignment1 = () => {
             </Card>
           </Col>
         </Row>
-        {/* <Row gutter={8}>
-          {shapes.map((shape, index) => (
-            <Col span={6} key={index}>
-              <ShapeCard
-                key={index}
-                shape={shape}
-                onClick={() => {}}
-                onMove={() => {
-                  if (shape === "up" || shape === "down") {
-                    movePosition();
-                  } else {
-                    moveShape(index);
-                  }
-                }}
-              />
-            </Col>
-          ))}
-        </Row> */}
         <Divider />
-
         <Row
           style={{
             alignItems: "center",
             width: "70%",
           }}
-          gutter={16}
-          justify="end"
+          gutter={8}
+          justify={centerPosition ? "center" : "end"}
         >
-          {shapeCarousel.map((shape, index) => (
-            <Col span={6} key={index} offset={1}>
+          {firstHalf.map((shape, index) => (
+            <Col span={6} key={index}>
+              <ShapeCardCarousel
+                key={index}
+                shape={shape}
+                onClick={() => {
+                  const tmpShapes = [...shapeCarousel].sort(
+                    () => Math.random() - 0.5
+                  );
+                  setShapeCarousel(tmpShapes);
+                }}
+              />
+            </Col>
+          ))}
+        </Row>
+        <Row
+          style={{
+            alignItems: "center",
+            width: "70%",
+          }}
+          gutter={8}
+          justify={centerPosition ? "end" : "center"}
+        >
+          {secondHalf.map((shape, index) => (
+            <Col span={6} key={index}>
               <ShapeCardCarousel
                 key={index}
                 shape={shape}
