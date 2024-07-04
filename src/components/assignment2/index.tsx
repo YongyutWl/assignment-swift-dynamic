@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Button, Flex, Layout, Table, Typography } from "antd";
+import { Button, Flex, Layout, Select, Table, Typography } from "antd";
 import FormAndTable from "./FormAndTable";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -13,7 +13,11 @@ const { Header, Content } = Layout;
 const Assignment2 = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+  const handleChangeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+  };
 
   const [dataSource, setDataSource] = useState<IUser[]>([]);
   const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
@@ -133,7 +137,18 @@ const Assignment2 = () => {
         }}
       >
         <Typography.Title level={3}>{`${t("Form & Table")}`}</Typography.Title>
-        <Button onClick={() => navigate("/")}>Home</Button>
+        <div style={{ alignItems: "center" }}>
+          <Select
+            defaultValue={i18n.language}
+            style={{ width: 120 }}
+            onChange={handleChangeLanguage}
+            options={[
+              { value: "en", label: "English" },
+              { value: "th", label: "Thai" },
+            ]}
+          />
+          <Button onClick={() => navigate("/")}>{t("Home")}</Button>
+        </div>
       </Header>
       <Content
         style={{

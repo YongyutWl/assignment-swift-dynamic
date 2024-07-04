@@ -11,17 +11,19 @@ import {
   Col,
   InputNumber,
 } from "antd";
-// import { useDispatch } from "react-redux";
 
 import { useAppSelector, useAppDispatch } from "../../store/hooks";
 import dayjs from "dayjs";
 import { v4 as uuidv4 } from "uuid";
 import { setUser } from "../../features/users/userSlice";
+import { useTranslation } from "react-i18next";
+
 
 const { Option } = Select;
 
 const FormAndTable = () => {
   const [form] = Form.useForm();
+  const { t,  } = useTranslation();
 
   const dispatch = useAppDispatch();
 
@@ -38,6 +40,7 @@ const FormAndTable = () => {
     } else {
       const index = data.findIndex((item: any) => item.id === values.id);
       data[index] = values;
+      localStorage.setItem("usersData", JSON.stringify(data));
     }
 
     form.resetFields();
@@ -86,7 +89,7 @@ const FormAndTable = () => {
           <Row>
             <Col span={6}>
               <Form.Item
-                label="Title"
+                label={t("Title")}
                 name="title"
                 rules={[
                   { required: true, message: "Please select your title!" },
@@ -101,7 +104,7 @@ const FormAndTable = () => {
             </Col>
             <Col span={10}>
               <Form.Item
-                label="Firstname"
+                label={t("Firstname")}
                 name="firstname"
                 rules={[
                   { required: true, message: "Please enter your firstname!" },
@@ -112,7 +115,7 @@ const FormAndTable = () => {
             </Col>
             <Col span={8}>
               <Form.Item
-                label="Lastname"
+                label={t("Lastname")}
                 name="lastname"
                 rules={[
                   { required: true, message: "Please enter your lastname!" },
@@ -124,7 +127,7 @@ const FormAndTable = () => {
 
             <Col span={8}>
               <Form.Item
-                label="Birthday"
+                label={t('Birthday')}
                 name="birthday"
                 rules={[
                   { required: true, message: "Please select your birthday!" },
@@ -135,7 +138,7 @@ const FormAndTable = () => {
             </Col>
             <Col span={12}>
               <Form.Item
-                label="Nationality"
+                label={t("Nationality")}
                 name="nationality"
                 rules={[
                   {
@@ -154,7 +157,7 @@ const FormAndTable = () => {
 
             <Col span={24}>
               <Form.Item
-                label="CitizenID"
+                label={t("CitizenID")}
                 name="citizenID"
                 rules={[
                   { required: true, message: "Please enter your CitizenID!" },
@@ -166,19 +169,19 @@ const FormAndTable = () => {
           </Row>
 
           <Form.Item
-            label="Gender"
+            label={t("Gender")}
             name="gender"
             rules={[{ required: true, message: "Please select your gender!" }]}
           >
             <Radio.Group>
-              <Radio value="male">Male</Radio>
-              <Radio value="female">Female</Radio>
-              <Radio value="unsex">Unsex</Radio>
+              <Radio value="male">{t("Male")}</Radio>
+              <Radio value="female">{t("Female")}</Radio>
+              <Radio value="unsex">{t("Unsex")}</Radio>
             </Radio.Group>
           </Form.Item>
 
           <Form.Item
-            label="Mobile Phone"
+            label={t("Mobile Phone")}
             name="mobilePhone"
             rules={[
               {
@@ -190,11 +193,11 @@ const FormAndTable = () => {
             <InputNumber controls={false} addonBefore="(+66)" />
           </Form.Item>
 
-          <Form.Item label="Passport No" name="passportNo">
+          <Form.Item label={t("Passport No")} name="passportNo">
             <Input />
           </Form.Item>
 
-          <Form.Item label="Expected Salary" name="expectedSalary">
+          <Form.Item label={t("Expected Salary")} name="expectedSalary">
             <Input />
           </Form.Item>
 

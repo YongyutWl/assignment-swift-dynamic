@@ -5,8 +5,20 @@
     "test": "Test",
     "Layout & Style": "Layout & Style",
     "Form & Table": "Form & Table",
-    "Move shape" : "Move shape",
-    "Move Position" : "Move position",
-    "Home" : "Home"
+    "Move shape": "Move shape",
+    "Move Position": "Move position",
+    "Home": "Home",
+    "Title": "Title",
+    "Firstname": "Firstname",
+    "Lastname": "Lastname",
+    "Birthday": "Birthday",
+    "Nationality": "Nationality",
+    "CitizenID": "Citizen ID",
+    "Gender": "Gender",
+    "Mobile Phone": "Mobile Phone",
+    "Passport No": "Passport No",
+    "Expected Salary": "Expected Salary",
+    "Male": "Male",
+    "Female": "Female",
+    "Unsex": "Unsex"
 }
-

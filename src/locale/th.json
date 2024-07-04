@@ -3,11 +3,23 @@
     "title": "หัวข้อ",
     "description": "คำอธิบาย",
     "test": "แบบทดสอบ",
-    "Layout & Style" : "การจัดการหน้าเว็บ",
-    "Form & Table" : "การจัดการหน้าฟอร์ม",
-    "Move shape" : "เลื่อนรูปแบบ",
-    "Move Position" : "เปลี่ยนตําแหน่ง",
-    "Home" : "หน้าหลัก"
-    
-}
+    "Layout & Style": "การจัดการหน้าเว็บ",
+    "Form & Table": "การจัดการหน้าฟอร์ม",
+    "Move shape": "เลื่อนรูปแบบ",
+    "Move Position": "เปลี่ยนตำแหน่ง",
+    "Home": "หน้าหลัก",
+    "Title": "คำนำหน้า",
+    "Firstname": "ชื่อ",
+    "Lastname": "นามสกุล",
+    "Birthday": "วันเกิด",
+    "Nationality": "สัญชาติ",
+    "CitizenID": "เลขที่ประชาชน",
+    "Gender": "เพศ",
+    "Mobile Phone": "เบอร์มือถือ",
+    "Passport No": "เลขทะเบียนหน้าทะเบียน",
+    "Expected Salary": "เงินเดือนที่คาดว่าจะได้รับ",
+    "Male": "ชาย",
+    "Female": "หญิง",
+    "Unsex": "ไม่ระบุเพศ"
 
+}
